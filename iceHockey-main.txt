@@ -1,0 +1,36 @@
+package eg.edu.alexu.csd.datastructure.iceHockey.cs08;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		IceHockey objectIceHockey = new IceHockey();
+		
+		 String[] picture= {
+					"44444H44S4",
+					"K444K4L444",
+					"4LJ44T44XH",
+					"444O4VIF44",
+					"44C4D4U444",
+					"4V4Y4KB4M4",
+					"G4W4HP4O4W",
+					"4444ZDQ4S4",
+					"4BR4Y4A444",
+					"4G4V4T4444"
+					};
+		
+		//objectIceHockey.setValuesToPlayer('8');
+		//objectIceHockey.setValuesToThreShold(16);
+		objectIceHockey.findPlayers(picture, 8, 9);
+		//objectIceHockey.setBooleanPicture();
+		//objectIceHockey.setCharArray();
+		//objectIceHockey.SetCharArrayToBoolean();
+		//objectIceHockey.setPlayerIndexs();
+		//objectIceHockey.sortArray();
+		//objectIceHockey.setPoint();
+		
+		System.out.println(objectIceHockey.pointArr[0]);
+
+	}
+
+}

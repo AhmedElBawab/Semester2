@@ -1,0 +1,53 @@
+
+
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Try1 {
+
+   public static void main(String args[]) throws IOException{
+	   
+	   System.out.println("--WELCOME TO HANGMAN GAME--");
+	   System.out.println("---------------------------");
+	   System.out.println("*You Have 5 Chances To Rescue The Man*");
+	   System.out.println("*PLEASE_ENTER_ENGLISH_SMALL_LETTERS_ONLY");
+	
+	   Hangman x = new Hangman();
+	   
+	   String[] a ={"xxx","yyy","EGYPT"};
+	   x.setDictionary(a);
+	   x.selectRandomSecretWord();
+	   x.dashingword();
+	   x.setMaxWrongGuesses(5);
+	   
+	   int i=0;
+	   
+	   while( i<5 && x.check()){
+		   x.printdashed();
+		   Scanner input = new Scanner(System.in);
+		   char c = input.next(".").charAt(0);
+		   String result=x.guess(c);
+		   if(result!=null){
+			   System.out.println("You have Used "+ i+" Out Of 5 Chances");
+		   }else{
+			   System.out.println("Wrong Answer");
+			   System.out.println("Try Again");
+			   i=x.wrong();
+			   System.out.println("You have Used "+i+" Out Of 5 Chances");
+			   		
+		   }
+	   }
+	   
+	   if(i==5){
+		   System.out.println("You Exceeded the max no. of Wrong Guesses!");
+		   System.out.println("YOU LOSE!");
+		   System.out.println("The word is"+"'"+x.secretword+"'");
+	   }else{
+		   System.out.println("YOU WIN ^_^");
+		   System.out.println("The word is"+"'"+x.secretword+"'");
+	   }
+	   
+   }
+      
+}
